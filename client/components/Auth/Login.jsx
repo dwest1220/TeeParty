@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import "./Login.css"
-import { getEmployeeByEmail } from "../../services/employeeService.jsx"  
+import { GetUserByEmail } from "../../services/UserService.jsx"
 
 export const Login = () => {
   const [email, set] = useState("alex.j@example.com")
@@ -11,7 +10,7 @@ export const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault()
 
-    getEmployeeByEmail(email).then((foundUsers) => {
+    GetUserByEmail(email).then((foundUsers) => {
       if (foundUsers.length === 1) {
         const employee = foundUsers[0]
         localStorage.setItem(
@@ -33,7 +32,7 @@ export const Login = () => {
     <main className="container-login">
       <section>
         <form className="form-login" onSubmit={handleLogin}>
-          <h1>Shepherd's Pie</h1>
+          <h1>Tee Party</h1>
           <h2>Please sign in</h2>
           <fieldset>
             <div className="form-group">

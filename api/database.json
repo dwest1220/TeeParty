@@ -1,6 +1,177 @@
 {
     "users": [
-      { "id": 1, "name": "Alice" },
-      { "id": 2, "name": "Bob" }
+      {
+        "id": 1,
+        "name": "Alex Johnson",
+        "email": "alex.j@example.com",
+        "handicap": 12,
+        "playStyle": "Casual",
+        "location": "Nashville, TN",
+        "bio": "Just looking to enjoy the game and meet new players."
+      },
+      {
+        "id": 2,
+        "name": "Brittany Lee",
+        "email": "brittany.lee@example.com",
+        "handicap": 8,
+        "playStyle": "Competitive",
+        "location": "Nashville, TN",
+        "bio": "Always up for a good challenge and a long drive."
+      },
+      {
+        "id": 3,
+        "name": "Carlos Ramirez",
+        "email": "carlos.r@example.com",
+        "handicap": 15,
+        "playStyle": "Casual",
+        "location": "Franklin, TN",
+        "bio": "Weekend warrior and short game specialist."
+      },
+      {
+        "id": 4,
+        "name": "Danielle Miller",
+        "email": "danielle.m@example.com",
+        "handicap": 6,
+        "playStyle": "Competitive",
+        "location": "Brentwood, TN",
+        "bio": "Love local tournaments and perfecting my swing."
+      },
+      {
+        "id": 5,
+        "name": "Ethan Walker",
+        "email": "ethan.w@example.com",
+        "handicap": 20,
+        "playStyle": "Social",
+        "location": "Nashville, TN",
+        "bio": "In it for the fun and good company."
+      },
+      {
+        "id": 6,
+        "name": "Fiona Chen",
+        "email": "fiona.chen@example.com",
+        "handicap": 10,
+        "playStyle": "Balanced",
+        "location": "Nashville, TN",
+        "bio": "Balanced golfer, always trying to improve."
+      },
+      {
+        "id": 7,
+        "name": "Gavin Brooks",
+        "email": "gavin.b@example.com",
+        "handicap": 4,
+        "playStyle": "Competitive",
+        "location": "Belle Meade, TN",
+        "bio": "Played in college, now looking for serious rounds."
+      },
+      {
+        "id": 8,
+        "name": "Hannah Scott",
+        "email": "hannah.s@example.com",
+        "handicap": 18,
+        "playStyle": "Casual",
+        "location": "Nashville, TN",
+        "bio": "Loves sunset rounds and 9-hole meetups."
+      },
+      {
+        "id": 9,
+        "name": "Isaiah Moore",
+        "email": "isaiah.m@example.com",
+        "handicap": 7,
+        "playStyle": "Competitive",
+        "location": "Nashville, TN",
+        "bio": "Low-handicap grinder who’s always game."
+      },
+      {
+        "id": 10,
+        "name": "Julia Rivera",
+        "email": "julia.r@example.com",
+        "handicap": 16,
+        "playStyle": "Social",
+        "location": "East Nashville, TN",
+        "bio": "Golf is therapy. Let's play and chat!"
+      }
+    ],
+    "courses": [
+      {
+        "id": 1,
+        "name": "Harpeth Hills Golf Course",
+        "location": "Nashville, TN",
+        "description": "Challenging public course in the hills of Percy Warner Park.",
+        "par": 72,
+        "slopeRating": 132.0,
+        "courseRating": 71.4
+      },
+      {
+        "id": 2,
+        "name": "Two Rivers Golf Course",
+        "location": "Nashville, TN",
+        "description": "Scenic metro course with great city views and forgiving fairways.",
+        "par": 72,
+        "slopeRating": 126.0,
+        "courseRating": 70.2
+      }
+    ],
+    "reviews": [
+      {
+        "id": 1,
+        "userId": 1,
+        "courseId": 1,
+        "rating": 5,
+        "comment": "Loved the elevation changes and views!",
+        "date": "2025-05-05"
+      },
+      {
+        "id": 2,
+        "userId": 4,
+        "courseId": 2,
+        "rating": 4,
+        "comment": "Good pace of play and friendly staff.",
+        "date": "2025-05-06"
+      }
+    ],
+    "teeTimes": [
+      {
+        "id": 1,
+        "courseId": 1,
+        "dateTime": "2025-05-10T08:00:00",
+        "maxPlayers": 4,
+        "createdByUser": 2
+      },
+      {
+        "id": 2,
+        "courseId": 2,
+        "dateTime": "2025-05-12T14:30:00",
+        "maxPlayers": 4,
+        "createdByUser": 5
+      }
+    ],
+    "teeTimePlayers": [
+      { "id": 1, "teeTimeId": 1, "userId": 2 },
+      { "id": 2, "teeTimeId": 1, "userId": 3 },
+      { "id": 3, "teeTimeId": 2, "userId": 5 },
+      { "id": 4, "teeTimeId": 2, "userId": 6 }
+    ],
+    "connections": [
+      {
+        "id": 1,
+        "requesterUserId": 1,
+        "receiverUserId": 4,
+        "status": "pending",
+        "requestedTime": "2025-05-07T15:00:00"
+      },
+      {
+        "id": 2,
+        "requesterUserId": 2,
+        "receiverUserId": 3,
+        "status": "accepted",
+        "requestedTime": "2025-05-06T11:00:00"
+      },
+      {
+        "id": 3,
+        "requesterUserId": 6,
+        "receiverUserId": 7,
+        "status": "pending",
+        "requestedTime": "2025-05-08T09:30:00"
+      }
     ]
   }

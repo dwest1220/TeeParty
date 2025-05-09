@@ -17,8 +17,16 @@ export const NavBar = () => {
                 <Link to="/profile">Profile</Link>
             </li>
             <li className="navbar-item">
-                <Link to="/login">Logout</Link>
+                <Link
+                    className="navbar-item"
+                    to="/login"
+                    onClick={() => {
+                        localStorage.removeItem("golf_user")
+                        navigate("/login", { replace: true })
+                    }}
+                >Logout
+                </Link>
             </li>
-        </ul>    
+        </ul>
     )
 }
