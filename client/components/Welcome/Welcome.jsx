@@ -20,6 +20,13 @@ export const Welcome = () => {
                 >
                     Courses
                 </button>
+                <button
+                    className="btn-primary"
+                    onClick={(() => {
+                        navigate(`/teetimes`)
+                    })}
+                >TeeTimes
+                </button>
             </div>
         </div>
     )
