@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { cancelTeeTime, editTeeTime, getTeeTimeById } from "../../services/teetimeService"
 import { getAllCourses } from "../../services/CourseService"
+import './EditTeeTime.css'
 
 export const EditTeeTime = ({ currentUser }) => {
 

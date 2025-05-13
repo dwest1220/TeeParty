@@ -369,6 +369,13 @@
       "maxPlayers": 2,
       "createdByUser": 1,
       "id": 27
+    },
+    {
+      "courseId": 2,
+      "time": "07:00",
+      "maxPlayers": 1,
+      "createdByUser": 1,
+      "id": 28
     }
   ],
   "teeTimePlayers": [

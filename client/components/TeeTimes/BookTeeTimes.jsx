@@ -16,7 +16,6 @@ export const BookTeeTimes = ({ currentUser }) => {
     }
 
     const [teetimes, setTeetimes] = useState([])
-    const [players, setPlayers] = useState([])
     const [courses, setCourses] = useState([])
     const [selections, setSelections] = useState(initialTeetimeState)
 
@@ -45,6 +44,7 @@ export const BookTeeTimes = ({ currentUser }) => {
             .then(() => {
                 alert('TeeTime Booked!')
                 setSelections(initialTeetimeState)
+                navigate(`/teetimes`)
             })
     }
 
