@@ -98,7 +98,7 @@
       "location": "Nashville, TN",
       "description": "Challenging public course in the hills of Percy Warner Park.",
       "par": 72,
-      "slopeRating": 132.0,
+      "slopeRating": 132,
       "courseRating": 71.4
     },
     {
@@ -107,7 +107,7 @@
       "location": "Nashville, TN",
       "description": "Scenic metro course with great city views and forgiving fairways.",
       "par": 72,
-      "slopeRating": 126.0,
+      "slopeRating": 126,
       "courseRating": 70.2
     },
     {
@@ -116,7 +116,7 @@
       "location": "Nashville, TN",
       "description": "Historic course along the Cumberland River with water hazards and lush greens.",
       "par": 72,
-      "slopeRating": 120.0,
+      "slopeRating": 120,
       "courseRating": 69.8
     },
     {
@@ -125,8 +125,8 @@
       "location": "Nashville, TN",
       "description": "9-hole executive course perfect for beginners and quick rounds.",
       "par": 30,
-      "slopeRating": 95.0,
-      "courseRating": 59.0
+      "slopeRating": 95,
+      "courseRating": 59
     },
     {
       "id": 5,
@@ -134,7 +134,7 @@
       "location": "Nashville, TN",
       "description": "Classic city course with rolling fairways and mature trees.",
       "par": 72,
-      "slopeRating": 121.0,
+      "slopeRating": 121,
       "courseRating": 69.5
     },
     {
@@ -143,7 +143,7 @@
       "location": "Nashville, TN",
       "description": "27-hole facility with a mix of layouts, ideal for all skill levels.",
       "par": 71,
-      "slopeRating": 118.0,
+      "slopeRating": 118,
       "courseRating": 68.9
     },
     {
@@ -152,7 +152,7 @@
       "location": "Nashville, TN",
       "description": "Short, tight layout with narrow fairways in a park setting.",
       "par": 64,
-      "slopeRating": 103.0,
+      "slopeRating": 103,
       "courseRating": 62.1
     },
     {
@@ -161,7 +161,7 @@
       "location": "Nashville, TN",
       "description": "Scottish links-style course along the Cumberland River with pristine conditions.",
       "par": 72,
-      "slopeRating": 135.0,
+      "slopeRating": 135,
       "courseRating": 72.6
     },
     {
@@ -170,7 +170,7 @@
       "location": "Old Hickory, TN",
       "description": "Championship layout known for pristine greens and river views.",
       "par": 72,
-      "slopeRating": 137.0,
+      "slopeRating": 137,
       "courseRating": 73.1
     },
     {
@@ -179,8 +179,8 @@
       "location": "Springfield, TN",
       "description": "Gene Bates design with rolling hills, challenging doglegs, and well-kept greens.",
       "par": 72,
-      "slopeRating": 128.0,
-      "courseRating": 71.0
+      "slopeRating": 128,
+      "courseRating": 71
     }
   ],
   "reviews": [
@@ -259,13 +259,6 @@
       "createdByUser": 3
     },
     {
-      "id": 9,
-      "courseId": 5,
-      "dateTime": "2025-05-12T13:00:00",
-      "maxPlayers": 4,
-      "createdByUser": 1
-    },
-    {
       "id": 10,
       "courseId": 5,
       "dateTime": "2025-05-13T07:45:00",
@@ -299,13 +292,6 @@
       "dateTime": "2025-05-12T10:30:00",
       "maxPlayers": 4,
       "createdByUser": 7
-    },
-    {
-      "id": 15,
-      "courseId": 8,
-      "dateTime": "2025-05-11T14:00:00",
-      "maxPlayers": 4,
-      "createdByUser": 1
     },
     {
       "id": 16,
@@ -355,6 +341,34 @@
       "dateTime": "2025-05-16T13:00:00",
       "maxPlayers": 4,
       "createdByUser": 7
+    },
+    {
+      "courseId": 9,
+      "time": "08:45",
+      "maxPlayers": 4,
+      "createdByUser": 1,
+      "id": 23
+    },
+    {
+      "courseId": 8,
+      "time": "11:25",
+      "maxPlayers": 3,
+      "createdByUser": 1,
+      "id": 25
+    },
+    {
+      "courseId": 1,
+      "time": "09:55",
+      "maxPlayers": 2,
+      "createdByUser": 1,
+      "id": 26
+    },
+    {
+      "courseId": 10,
+      "time": "14:00",
+      "maxPlayers": 2,
+      "createdByUser": 1,
+      "id": 27
     }
   ],
   "teeTimePlayers": [

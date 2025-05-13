@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getAllCourses } from "../../services/CourseService"
+import './Courses.css'
 
 export const Courses = () => {
     const [courses, setCourses] = useState([])
@@ -11,10 +12,10 @@ export const Courses = () => {
     return (
         <div className="course-container">
             <h2>Courses</h2>
-            <article className="courses">
+            <article className="courses-list">
                 {courses.map((course)=>{
                     return (
-                        <section className="course">
+                        <section className="course-card">
                             <header className="course-info">{course.name}</header>
                             <footer>
                                 <div className="course-info">

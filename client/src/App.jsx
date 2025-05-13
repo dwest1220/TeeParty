@@ -1,6 +1,6 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import { AppViews } from '../components/Views/views'
+import { AppViews } from '../components/Views/AppViews.jsx'
 import { Login } from '../components/Auth/Login.jsx'
 
 export const App = () => {

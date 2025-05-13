@@ -1,0 +1,65 @@
+.book-teetimes-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.book-teetime-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px 28px 24px 28px;
+    min-width: 320px;
+    max-width: 420px;
+    width: 100%;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.book-teetime-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.16);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.book-teetime-card h2 {
+    font-size: 1.4rem;
+    color: #1a5d2b;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.book-container fieldset {
+    border: none;
+    margin-bottom: 18px;
+    padding: 0;
+}
+
+.book-container label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.book-radio {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.book-teetime-card button[type="submit"] {
+    background: #1a5d2b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s;
+}
+
+.book-teetime-card button[type="submit"]:hover {
+    background: #218838;
+}
