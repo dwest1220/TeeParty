@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { getAllTeetimesAndCourse } from "../../services/teetimeService"
 import { useNavigate } from "react-router-dom"
-import './TeeTimes.css'
+import './MyTeeTimes.css'
 
-export const TeeTimes = ({currentUser}) => {
+export const MyTeeTimes = ({currentUser}) => {
 
     const [teetime, setTeetime] = useState([])
 
@@ -25,7 +25,7 @@ export const TeeTimes = ({currentUser}) => {
                 {teetime.map((teetime) => {
                     if (currentUser.id === teetime.createdByUser) {
                         return (
-                            <section className="teetime">
+                            <section className="teetime" key={teetime.id}>
                                 <header className="teetime-info">{teetime.course.name}</header>
                                 <footer>
                                     <div className="teetime-info">

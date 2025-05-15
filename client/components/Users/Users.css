@@ -1,0 +1,30 @@
+.user-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.user-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.user-info {
+    background: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    padding: 1.5rem;
+    min-width: 220px;
+    max-width: 300px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
