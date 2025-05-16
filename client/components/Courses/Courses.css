@@ -7,7 +7,7 @@
 }
 
 .course-card {
-    background: #fff;
+    background-color: #DAD7CD;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 24px 20px 18px 20px;
@@ -43,5 +43,5 @@
     flex-direction: column;
     gap: 6px;
     font-size: 1rem;
-    color: #444;
+    color: #000000;
 }

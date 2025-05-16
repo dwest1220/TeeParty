@@ -9,6 +9,7 @@ import { EditTeeTime } from "../TeeTimes/EditTeeTime"
 import { Users } from "../Users/Users"
 import { Profile } from "../Profile/profile"
 import { EditProfile } from "../Profile/EditProfile"
+import { CreateUser } from "../Profile/CreateProfile"
 
 
 
@@ -36,6 +37,7 @@ export const AppViews = () => {
                 }
             >
                 <Route index element={<Welcome />} />
+                <Route path="register" element={<CreateUser />} />
                 <Route path="courses" element={<Courses />} />
                 <Route path="teetimes">
                     <Route index element={<MyTeeTimes currentUser={currentUser}/>} />

@@ -29,11 +29,12 @@ export const MyTeeTimes = ({currentUser}) => {
                                 <header className="teetime-info">{teetime.course.name}</header>
                                 <footer>
                                     <div className="teetime-info">
-                                        <div>{teetime.time}</div>
+                                        <div>Time: {teetime.time}</div>
                                         <div>Players: {teetime.maxPlayers}</div>
                                     </div>
                                 </footer>
-                                <button 
+                                <button
+                                    className="button" 
                                     onClick={() => navigate(`/teetimes/edit/${teetime.id}`)}
                                 >Edit</button>
                             </section>

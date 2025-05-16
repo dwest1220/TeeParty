@@ -1,11 +1,13 @@
 {
   "users": [
     {
+      "id": 1,
+      "name": "Alex Johnson",
+      "email": "alex.j@example.com",
       "location": "Nashville, TN",
       "handicap": "10",
       "playStyle": "Casual",
-      "bio": "Just looking to enjoy the game and meet new players.",
-      "id": 1
+      "bio": "Just looking to enjoy the game and meet new players."
     },
     {
       "id": 2,
@@ -87,6 +89,24 @@
       "playStyle": "Social",
       "location": "East Nashville, TN",
       "bio": "Golf is therapy. Let's play and chat!"
+    },
+    {
+      "name": "John McDavids",
+      "email": "john@example.com",
+      "location": "Nashville, TN",
+      "handicap": "7",
+      "playStyle": "Casual",
+      "bio": "This is a test. ",
+      "id": 11
+    },
+    {
+      "name": "Dom John",
+      "email": "domjohn@example.com",
+      "location": "BFE, KY",
+      "handicap": "25",
+      "playStyle": "Beginner / Casual",
+      "bio": "New player looking to learn more about the game!",
+      "id": 13
     }
   ],
   "courses": [
@@ -181,50 +201,50 @@
       "courseRating": 71
     },
     {
-    "id": 11,
-    "name": "Nashville National Golf Links",
-    "location": "Joelton, TN",
-    "description": "Scenic 18-hole course nestled among limestone bluffs and Sycamore Creek, offering natural Tennessee beauty.",
-    "par": 72,
-    "slopeRating": 130,
-    "courseRating": 71.2
-  },
-  {
-    "id": 12,
-    "name": "Pine Creek Golf Club",
-    "location": "Mt. Juliet, TN",
-    "description": "Quiet 18-hole course featuring bent grass greens and Bermuda fairways, known for pristine conditions.",
-    "par": 72,
-    "slopeRating": 125,
-    "courseRating": 70.5
-  },
-  {
-    "id": 13,
-    "name": "Greystone Golf Club",
-    "location": "Dickson, TN",
-    "description": "Mark McCumber-designed course with rolling hills and scenic rock formations, previously hosted PGA Tour qualifying.",
-    "par": 72,
-    "slopeRating": 134,
-    "courseRating": 72.3
-  },
-  {
-    "id": 14,
-    "name": "Nashboro Golf Club",
-    "location": "Nashville, TN",
-    "description": "Challenging 18-hole course with tree-lined fairways and strategically placed water hazards.",
-    "par": 72,
-    "slopeRating": 128,
-    "courseRating": 71.0
-  },
-  {
-    "id": 15,
-    "name": "Harpeth Valley Golf Center",
-    "location": "Nashville, TN",
-    "description": "Public 9-hole course with a relaxed atmosphere, ideal for beginners and casual play.",
-    "par": 36,
-    "slopeRating": 110,
-    "courseRating": 68.0
-  }
+      "id": 11,
+      "name": "Nashville National Golf Links",
+      "location": "Joelton, TN",
+      "description": "Scenic 18-hole course nestled among limestone bluffs and Sycamore Creek, offering natural Tennessee beauty.",
+      "par": 72,
+      "slopeRating": 130,
+      "courseRating": 71.2
+    },
+    {
+      "id": 12,
+      "name": "Pine Creek Golf Club",
+      "location": "Mt. Juliet, TN",
+      "description": "Quiet 18-hole course featuring bent grass greens and Bermuda fairways, known for pristine conditions.",
+      "par": 72,
+      "slopeRating": 125,
+      "courseRating": 70.5
+    },
+    {
+      "id": 13,
+      "name": "Greystone Golf Club",
+      "location": "Dickson, TN",
+      "description": "Mark McCumber-designed course with rolling hills and scenic rock formations, previously hosted PGA Tour qualifying.",
+      "par": 72,
+      "slopeRating": 134,
+      "courseRating": 72.3
+    },
+    {
+      "id": 14,
+      "name": "Nashboro Golf Club",
+      "location": "Nashville, TN",
+      "description": "Challenging 18-hole course with tree-lined fairways and strategically placed water hazards.",
+      "par": 72,
+      "slopeRating": 128,
+      "courseRating": 71
+    },
+    {
+      "id": 15,
+      "name": "Harpeth Valley Golf Center",
+      "location": "Nashville, TN",
+      "description": "Public 9-hole course with a relaxed atmosphere, ideal for beginners and casual play.",
+      "par": 36,
+      "slopeRating": 110,
+      "courseRating": 68
+    }
   ],
   "reviews": [
     {
@@ -402,7 +422,7 @@
     {
       "courseId": 1,
       "time": "09:55",
-      "maxPlayers": 2,
+      "maxPlayers": 3,
       "createdByUser": 1,
       "id": 26
     },

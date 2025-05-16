@@ -7,7 +7,7 @@
 }
 
 .teetime {
-    background: #fff;
+    background-color: #DAD7CD;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 24px 20px 18px 20px;
@@ -46,7 +46,7 @@
     color: #444;
 }
 
-button[type="button"] {
+.button {
     background: #1a5d2b;
     color: #fff;
     border: none;
@@ -58,6 +58,6 @@ button[type="button"] {
     transition: background 0.2s;
 }
 
-button[type="button"]:hover {
+.button[type="button"]:hover {
     background: #218838;
 }

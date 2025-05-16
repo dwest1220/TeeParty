@@ -12,12 +12,11 @@ export const Login = () => {
 
     GetUserByEmail(email).then((foundUsers) => {
       if (foundUsers.length === 1) {
-        const employee = foundUsers[0]
+        const user = foundUsers[0]
         localStorage.setItem(
           "golf_user",
           JSON.stringify({
-            id: employee.id,
-            isAdmin: employee.isAdmin,
+            id: user.id,
           })
         )
 
@@ -54,10 +53,14 @@ export const Login = () => {
               </button>
             </div>
           </fieldset>
+          <fieldset>
+            <div>
+              <Link to={"/register"}>
+                <div>New Here? Sign Up Now!</div>
+              </Link>
+            </div>
+          </fieldset>
         </form>
-      </section>
-      <section>
-        {/* <Link to="/register">Not a member yet?</Link> */}
       </section>
     </main>
   )

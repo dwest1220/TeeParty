@@ -1,0 +1,111 @@
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background-color:#74C69D;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.main {
+  flex: 1;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fphoto-assets.masters.com%2Fimages%2Fpics%2Flarge%2Fh_13ANGC14-1RB1993Hc-wb.jpg&f=1&nofb=1&ipt=f9d08bf242cbae19962b785fae764d9c9010732e18af66eca981a85b616e62cf");
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.welcome-section {
+  text-align: center;
+  max-width: 700px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  background-color: #DAD7CD;
+}
+
+.welcome-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.brand-name {
+  color: #14452F;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+
+.welcome-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #14452F;
+  color: #D8F3DC;
+}
+
+.btn-primary:hover {
+  background-color: #74C69D;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #14452F;
+  color: #D8F3DC;
+}
+
+.btn-secondary:hover {
+  background-color: #74C69D;
+  transform: translateY(-2px);
+}
+
+
+.footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #535353;
+}
+
+
+@media (min-width: 600px) {
+  .welcome-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

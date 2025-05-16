@@ -1,31 +1,32 @@
 import { useEffect, useState } from "react"
-import { editCurrentProfile, getUserById } from "../../services/UserService"
 import { useNavigate, useParams } from "react-router-dom"
+import { createNewUser } from "../../services/UserService"
 
-export const EditProfile = () => {
 
-    const [user, setUser] = useState({})
-    const [location, setLocation] = useState("")
+export const CreateUser = () => {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [location, setLocation] = useState('')
     const [handicap, setHandicap] = useState(0)
     const [playStyle, setPlayStyle] = useState('')
-    const [bio, setBio] = useState("")
+    const [bio, setBio] = useState('')
 
-    const { id } = useParams()
     const navigate = useNavigate()
-
-    useEffect(() => {
-        getUserById(id).then((data) => {
-            setUser(data)
-            setLocation(data.location)
-            setHandicap(data.handicap)
-            setPlayStyle(data.playStyle)
-            setBio(data.bio)
-        })
-    }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
+        if (name.trim() === "") {
+        alert("Name is required.")
+        return
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.")
+        return
+    }
 
     const handicapNumber = Number(handicap)
     if (isNaN(handicapNumber) || handicapNumber < 0 || handicapNumber > 54) {
@@ -48,24 +49,38 @@ export const EditProfile = () => {
         return
     }
 
-        const updatedProfile = {
+        const newUser = {
+            name: name,
+            email: email,
             location: location,
             handicap: handicap,
             playStyle: playStyle,
-            bio: bio
-        }
+            bio: bio,
 
-        editCurrentProfile(id, updatedProfile)
-            .then(() => {
-                alert("Changes saved!")
-                navigate(`/profile`)
-            })
+        }
+        createNewUser(newUser)
+        .then(()=> {
+            alert("Account created!")
+            navigate(`/login`)
+        })
     }
 
     return (
-        <form className="profile-edit-container" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <fieldset className="profile-edit-form">
-                <label>Location</label>
+                <label>Name:</label>
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                ></input>
+                <label>Email:</label>
+                <input
+                    type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                ></input>
+                <label>Location:</label>
                 <input
                     type="text"
                     value={location}
@@ -73,7 +88,7 @@ export const EditProfile = () => {
                 ></input>
             </fieldset>
             <fieldset className="profile-edit-form">
-                <label>Handicap</label>
+                <label>Handicap:</label>
                 <input
                     type="text"
                     value={handicap}
@@ -81,7 +96,7 @@ export const EditProfile = () => {
                 ></input>
             </fieldset>
             <fieldset className="profile-edit-form">
-                <label>PlayStyle</label>
+                <label>PlayStyle:</label>
                 <input
                     type="text"
                     value={playStyle}
@@ -89,14 +104,14 @@ export const EditProfile = () => {
                 ></input>
             </fieldset>
             <fieldset className="profile-edit-form">
-                <label>Bio</label>
+                <label>Bio:</label>
                 <input
                     type="text"
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
                 ></input>
             </fieldset>
-            <button type="submit">Save Changes</button>
+            <button type="submit">Join</button>
         </form>
     )
 }
