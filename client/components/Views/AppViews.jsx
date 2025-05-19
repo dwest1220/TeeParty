@@ -10,6 +10,7 @@ import { Users } from "../Users/Users"
 import { Profile } from "../Profile/profile"
 import { EditProfile } from "../Profile/EditProfile"
 import { CreateUser } from "../Profile/CreateProfile"
+import { Footer } from "../Footer/footer"
 
 
 
@@ -33,6 +34,7 @@ export const AppViews = () => {
                     <>
                         <NavBar />
                         <Outlet />
+                        <Footer />
                     </>
                 }
             >

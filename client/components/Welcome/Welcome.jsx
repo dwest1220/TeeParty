@@ -20,9 +20,7 @@ export const Welcome = () => {
         </section>
       </main>
 
-      <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} TeeParty. All rights reserved.</p>
-      </footer>
+      
     </div>
   )
 }

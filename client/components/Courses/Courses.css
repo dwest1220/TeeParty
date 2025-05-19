@@ -1,47 +1,70 @@
+.course-container {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F3700083.jpg&f=1&nofb=1&ipt=97dad57e9afc86131b0cebc08117e97f836dbaab16115bf5622682379c302e82");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
 .courses-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    margin-top: 24px;
-    justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+  justify-content: center;
 }
 
 .course-card {
-    background-color: #DAD7CD;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 24px 20px 18px 20px;
-    min-width: 260px;
-    max-width: 320px;
-    flex: 1 1 260px;
-    transition: box-shadow 0.2s, transform 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background-color: #DAD7CD; 
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 24px;
+  width: 100%;
+  max-width: 320px;
+  flex: 1 1 260px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(2px);
 }
 
 .course-card:hover {
-    box-shadow: 0 6px 24px rgba(0,0,0,0.16);
-    transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+  transform: translateY(-4px) scale(1.03);
 }
 
 .course-info {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    color: #222;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: #333;
 }
 
 .course-card header.course-info {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-    color: #1a5d2b;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: #1a5d2b;
 }
 
 .course-card footer .course-info {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    font-size: 1rem;
-    color: #000000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.course-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
 }

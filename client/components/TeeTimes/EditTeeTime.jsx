@@ -98,8 +98,8 @@ export const EditTeeTime = ({ currentUser }) => {
                     ))}
                 </div>
             </fieldset>
-            <button type="button" onClick={handleSubmit}>Save Changes</button>
-            <button type="button" onClick={deleteTeeTime}>Delete</button>
+            <button className="button" type="button" onClick={handleSubmit}>Save Changes</button>
+            <button className="button" type="button" onClick={deleteTeeTime}>Delete</button>
         </form>
     )
 }
