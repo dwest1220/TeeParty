@@ -433,7 +433,7 @@
     {
       "courseId": 1,
       "time": "10:55",
-      "maxPlayers": 3,
+      "maxPlayers": 2,
       "createdByUser": 1,
       "id": 26
     },
@@ -523,6 +523,13 @@
       "status": "accepted",
       "timestamp": 1747858009701,
       "id": 3
+    },
+    {
+      "requesterUserId": 4,
+      "receiverUserId": 1,
+      "status": "accepted",
+      "timestamp": 1747944469181,
+      "id": 4
     }
   ]
 }

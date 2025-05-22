@@ -15,7 +15,7 @@ export const Courses = () => {
             <article className="courses-list">
                 {courses.map((course)=>{
                     return (
-                        <section className="course-card">
+                        <section className="course-card" key={course.id}>
                             <header className="course-info">{course.name}</header>
                             <footer>
                                 <div className="course-info">

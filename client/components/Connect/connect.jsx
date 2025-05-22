@@ -21,7 +21,7 @@ export const Connect = ({ currentUser }) => {
                 (conn.requesterUserId === currentUser.id && conn.receiverUserId === targetUserId) ||
                 (conn.requesterUserId === targetUserId && conn.receiverUserId === currentUser.id)
 
-            return isMatch && conn.status !== "denied"
+            return isMatch && conn.status !== "accepted"
         })
     }
 
@@ -47,6 +47,23 @@ export const Connect = ({ currentUser }) => {
             })
     }
 
+    const getConnectionStatus = (targetUserId) => {
+    const connection = connections.find(conn =>
+        (conn.requesterUserId === currentUser.id && conn.receiverUserId === targetUserId) ||
+        (conn.requesterUserId === targetUserId && conn.receiverUserId === currentUser.id)
+    )
+
+    if (!connection) return "none"
+    if (connection.status === "accepted") return "connected"
+    if (connection.status === "pending") {
+        return connection.requesterUserId === currentUser.id
+            ? "pendingOutgoing"
+            : "pendingIncoming"
+    }
+
+    return "none"
+}
+
     if (!currentUser) return <div>Loading...</div>
 
     return (
@@ -60,7 +77,10 @@ export const Connect = ({ currentUser }) => {
             </Link>
 
             <section className="user-body">
-                {users.map((user) => (
+                {users.map((user) => {
+                    const status = getConnectionStatus(user.id)
+
+                    return (
                     <article className="user-info" key={user.id}>
                         <header className="user-header">{user.name}</header>
                         <footer>
@@ -71,17 +91,17 @@ export const Connect = ({ currentUser }) => {
                             <button
                                 className="btn btn-primary"
                                 onClick={() => handleConnect(user.id)}
-                                disabled={user.id === currentUser.id || isConnected(user.id)}
+                                disabled={user.id === currentUser.id || isConnected(user.id) || status !== "none"}
                             >
                                 {user.id === currentUser.id
                                     ? "You"
-                                    : isConnected(user.id)
-                                        ? "Connected"
+                                    : status === "pendingOutgoing"
+                                        ? "Request Sent"
                                         : "Connect"}
                             </button>
                         </footer>
                     </article>
-                ))}
+            )})}
             </section>
         </div>
     )

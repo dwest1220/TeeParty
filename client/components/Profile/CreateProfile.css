@@ -1,53 +1,65 @@
-.login-container {
+.create-profile-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: calc(100vh - 120px); 
+  padding: 2rem 1rem;
   background: radial-gradient(circle at top left, #14452F, #264653);
+  box-sizing: border-box;
 }
 
-.login-card {
+.create-profile-card {
   background-color: #ffffff;
   padding: 2rem 2.5rem;
   border-radius: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   text-align: center;
+  overflow-y: auto;
 }
 
-.login-title {
+.create-profile-title {
   font-size: 2rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 0.25rem;
 }
 
-.login-subtitle {
+.create-profile-subtitle {
   font-size: 1.1rem;
   font-weight: 400;
   color: #64748b;
   margin-bottom: 1.5rem;
 }
 
-.login-group {
+.profile-edit-form {
   margin-bottom: 1.25rem;
+  text-align: left;
 }
 
-.login-input {
+.profile-edit-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.profile-edit-form input {
   width: 100%;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
   outline: none;
+  margin-bottom: 0.5rem;
 }
 
-.login-btn {
+.create-profile-btn {
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
-  background-color: #10b981; 
+  background-color: #10b981; /* emerald-500 */
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -55,19 +67,6 @@
   transition: background 0.2s ease;
 }
 
-.login-btn:hover {
-  background-color: #059669; 
-}
-
-.login-footer {
-  margin-top: 1rem;
-}
-
-.login-link {
-  color: #2563eb; 
-  text-decoration: none;
-}
-
-.login-link:hover {
-  text-decoration: underline;
+.create-profile-btn:hover {
+  background-color: #059669; /* emerald-600 */
 }

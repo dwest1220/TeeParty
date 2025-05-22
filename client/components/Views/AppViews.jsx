@@ -14,7 +14,7 @@ import { Footer } from "../Footer/footer"
 import { Connect } from "../Connect/connect"
 import { PendingConnections } from "../Connect/PendingConnections"
 import { CurrentConnections } from "../Connect/CurrentConnections"
-
+import { ProtectedRoute } from "../Auth/Auth"
 
 
 export const AppViews = () => {
@@ -34,11 +34,13 @@ export const AppViews = () => {
             <Route
                 path="/"
                 element={
-                    <>
-                        <NavBar />
-                        <Outlet />
-                        <Footer />
-                    </>
+                    <ProtectedRoute>
+                        <>
+                            <NavBar />
+                            <Outlet />
+                            <Footer />
+                        </>
+                    </ProtectedRoute>
                 }
             >
                 <Route index element={<Welcome />} />
