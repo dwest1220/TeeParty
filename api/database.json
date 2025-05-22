@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "Alex Johnson",
       "email": "alex.j@example.com",
       "location": "Nashville, TN",
       "handicap": "10",
       "playStyle": "Casual",
-      "bio": "Just looking to enjoy the game and meet new players."
+      "bio": "Just looking to enjoy the game and meet new players.",
+      "id": 1
     },
     {
       "id": 2,
@@ -107,6 +107,24 @@
       "playStyle": "Beginner / Casual",
       "bio": "New player looking to learn more about the game!",
       "id": 13
+    },
+    {
+      "name": "Nick Monty",
+      "email": "nick@example.com",
+      "location": "New York, New York",
+      "handicap": "12",
+      "playStyle": "Lucky",
+      "bio": "They call me Mr. Hole in One (2 to my name). Every time I step onto a par 3 tee box, the pin shakes with fear. ",
+      "id": 14
+    },
+    {
+      "name": "Trent Ox",
+      "email": "trentox@example.com",
+      "location": "Los Angeles, CA",
+      "handicap": "2",
+      "playStyle": "Competitive",
+      "bio": "Absolutely electric. Haven't missed a fairway in years. Can't remember what its like to shoot over par.",
+      "id": 15
     }
   ],
   "courses": [
@@ -415,7 +433,7 @@
     {
       "courseId": 1,
       "time": "10:55",
-      "maxPlayers": 4,
+      "maxPlayers": 3,
       "createdByUser": 1,
       "id": 26
     },
@@ -432,6 +450,34 @@
       "maxPlayers": 2,
       "createdByUser": 2,
       "id": 29
+    },
+    {
+      "courseId": 4,
+      "time": "08:30",
+      "maxPlayers": 1,
+      "createdByUser": 14,
+      "id": 30
+    },
+    {
+      "courseId": 11,
+      "time": "10:30",
+      "maxPlayers": 2,
+      "createdByUser": 15,
+      "id": 31
+    },
+    {
+      "courseId": 4,
+      "time": "13:30",
+      "maxPlayers": 2,
+      "createdByUser": 15,
+      "id": 32
+    },
+    {
+      "courseId": 14,
+      "time": "09:45",
+      "maxPlayers": 2,
+      "createdByUser": 1,
+      "id": 33
     }
   ],
   "teeTimePlayers": [
@@ -458,25 +504,25 @@
   ],
   "connections": [
     {
-      "id": 1,
       "requesterUserId": 1,
-      "receiverUserId": 4,
-      "status": "pending",
-      "requestedTime": "2025-05-07T15:00:00"
-    },
-    {
-      "id": 2,
-      "requesterUserId": 2,
-      "receiverUserId": 3,
+      "receiverUserId": 15,
       "status": "accepted",
-      "requestedTime": "2025-05-06T11:00:00"
+      "timestamp": 1747857242982,
+      "id": 1
     },
     {
-      "id": 3,
-      "requesterUserId": 6,
-      "receiverUserId": 7,
-      "status": "pending",
-      "requestedTime": "2025-05-08T09:30:00"
+      "requesterUserId": 1,
+      "receiverUserId": 14,
+      "status": "accepted",
+      "timestamp": 1747857244711,
+      "id": 2
+    },
+    {
+      "requesterUserId": 15,
+      "receiverUserId": 14,
+      "status": "accepted",
+      "timestamp": 1747858009701,
+      "id": 3
     }
   ]
 }

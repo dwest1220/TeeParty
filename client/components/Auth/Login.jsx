@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { GetUserByEmail } from "../../services/UserService.jsx"
+import './Login.css'
 
 export const Login = () => {
   const [email, set] = useState("alex.j@example.com")
@@ -15,11 +15,8 @@ export const Login = () => {
         const user = foundUsers[0]
         localStorage.setItem(
           "golf_user",
-          JSON.stringify({
-            id: user.id,
-          })
+          JSON.stringify({ id: user.id })
         )
-
         navigate("/")
       } else {
         window.alert("Invalid login")
@@ -28,35 +25,38 @@ export const Login = () => {
   }
 
   return (
-    <main className="container-login">
+    <main className="login-container">
       <section>
-        <form className="form-login" onSubmit={handleLogin}>
-          <h1>Tee Party</h1>
-          <h2>Please sign in</h2>
+        <form className="login-card" onSubmit={handleLogin}>
+          <h1 className="login-title">Tee Party</h1>
+          <h2 className="login-subtitle">Please sign in</h2>
+
           <fieldset>
-            <div className="form-group">
+            <div className="login-group">
               <input
                 type="email"
                 value={email}
                 onChange={(evt) => set(evt.target.value)}
-                className="form-control"
+                className="login-input"
                 placeholder="Email address"
                 required
                 autoFocus
               />
             </div>
           </fieldset>
+
           <fieldset>
-            <div className="form-group">
-              <button className="login-btn btn-info" type="submit">
+            <div className="login-group">
+              <button className="login-btn" type="submit">
                 Sign in
               </button>
             </div>
           </fieldset>
+
           <fieldset>
-            <div>
-              <Link to={"/register"}>
-                <div>New Here? Sign Up Now!</div>
+            <div className="login-footer">
+              <Link to="/register" className="login-link">
+                New Here? Sign Up Now!
               </Link>
             </div>
           </fieldset>

@@ -1,0 +1,71 @@
+.connect-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 4rem 2rem;
+  background: radial-gradient(circle at top left, #14452F, #264653);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connect-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #7AE582;
+  margin-bottom: 2rem;
+}
+
+.user-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
+}
+
+.user-info {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  max-width: 320px;
+  width: 100%;
+  flex: 1 1 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+}
+
+.user-info:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.user-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #7AE582;
+}
+
+.user-info footer div {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.button {
+    background: #1a5d2b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 18px;
+    align-self: flex-start;
+    transition: background 0.3s, transform 0.2s;
+}

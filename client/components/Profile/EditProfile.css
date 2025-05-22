@@ -1,0 +1,100 @@
+.edit-profile-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #14452F, #264653);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.profile-edit-form {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-edit-form h2 {
+  text-align: center;
+  color: #7AE582;
+  margin-bottom: 1.5rem;
+}
+
+.profile-edit-form label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.profile-edit-form input,
+.profile-edit-form textarea {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+}
+
+.profile-edit-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.profile-edit-form input:focus,
+.profile-edit-form textarea:focus {
+  border-color: #7AE582;
+  box-shadow: 0 0 0 3px rgba(122, 229, 130, 0.3);
+}
+
+.profile-edit-form button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #7AE582;
+  border: none;
+  border-radius: 10px;
+  color: #14452F;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profile-edit-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.submit-btn {
+  padding: 0.9rem 1.2rem;
+  background: linear-gradient(135deg, #7AE582, #49B969);
+  border: none;
+  border-radius: 10px;
+  color: #0f3d2e;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #6ee37d, #3fae60);
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}

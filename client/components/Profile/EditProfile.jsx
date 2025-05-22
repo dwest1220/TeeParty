@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { editCurrentProfile, getUserById } from "../../services/UserService"
 import { useNavigate, useParams } from "react-router-dom"
+import './EditProfile.css'
 
 export const EditProfile = () => {
 
@@ -9,6 +10,8 @@ export const EditProfile = () => {
     const [handicap, setHandicap] = useState(0)
     const [playStyle, setPlayStyle] = useState('')
     const [bio, setBio] = useState("")
+    const [email, setEmail] = useState("")
+    const [name, setName] = useState("")
 
     const { id } = useParams()
     const navigate = useNavigate()
@@ -16,6 +19,8 @@ export const EditProfile = () => {
     useEffect(() => {
         getUserById(id).then((data) => {
             setUser(data)
+            setName(data.name)
+            setEmail(data.email)
             setLocation(data.location)
             setHandicap(data.handicap)
             setPlayStyle(data.playStyle)
@@ -27,28 +32,30 @@ export const EditProfile = () => {
         e.preventDefault()
 
 
-    const handicapNumber = Number(handicap)
-    if (isNaN(handicapNumber) || handicapNumber < 0 || handicapNumber > 54) {
-        alert("Handicap must be a number between 0 and 54.")
-        return
-    }
+        const handicapNumber = Number(handicap)
+        if (isNaN(handicapNumber) || handicapNumber < 0 || handicapNumber > 54) {
+            alert("Handicap must be a number between 0 and 54.")
+            return
+        }
 
-    if (playStyle.trim() === "") {
-        alert("Play style is required.")
-        return
-    }
+        if (playStyle.trim() === "") {
+            alert("Play style is required.")
+            return
+        }
 
-    if (location.trim() === "") {
-        alert("Location is required.")
-        return
-    }
+        if (location.trim() === "") {
+            alert("Location is required.")
+            return
+        }
 
-    if (bio.trim().length < 10) {
-        alert("Bio must be at least 10 characters.")
-        return
-    }
+        if (bio.trim().length < 10) {
+            alert("Bio must be at least 10 characters.")
+            return
+        }
 
         const updatedProfile = {
+            name: name,
+            email: email,
             location: location,
             handicap: handicap,
             playStyle: playStyle,
@@ -63,40 +70,63 @@ export const EditProfile = () => {
     }
 
     return (
-        <form className="profile-edit-container" onSubmit={handleSubmit}>
-            <fieldset className="profile-edit-form">
-                <label>Location</label>
-                <input
-                    type="text"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                ></input>
-            </fieldset>
-            <fieldset className="profile-edit-form">
-                <label>Handicap</label>
-                <input
-                    type="text"
-                    value={handicap}
-                    onChange={(e) => setHandicap(e.target.value)}
-                ></input>
-            </fieldset>
-            <fieldset className="profile-edit-form">
-                <label>PlayStyle</label>
-                <input
-                    type="text"
-                    value={playStyle}
-                    onChange={(e) => setPlayStyle(e.target.value)}
-                ></input>
-            </fieldset>
-            <fieldset className="profile-edit-form">
-                <label>Bio</label>
-                <input
-                    type="text"
-                    value={bio}
-                    onChange={(e) => setBio(e.target.value)}
-                ></input>
-            </fieldset>
-            <button type="submit">Save Changes</button>
-        </form>
+        <div className="edit-profile-page">
+            <form className="profile-edit-form" onSubmit={handleSubmit}>
+                <h2>Edit Your Profile</h2>
+
+                <div className="form-group">
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Email</label>
+                    <input
+                        type="text"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Location</label>
+                    <input
+                        type="text"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Handicap</label>
+                    <input
+                        type="number"
+                        value={handicap}
+                        onChange={(e) => setHandicap(e.target.value)}
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Play Style</label>
+                    <input
+                        type="text"
+                        value={playStyle}
+                        onChange={(e) => setPlayStyle(e.target.value)}
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Bio</label>
+                    <textarea
+                        value={bio}
+                        onChange={(e) => setBio(e.target.value)}
+                    ></textarea>
+                </div>
+
+                <button type="submit" className="submit-btn">Save Changes</button>
+            </form>
+        </div>
     )
 }
