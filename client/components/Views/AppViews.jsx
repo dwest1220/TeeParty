@@ -2,9 +2,8 @@ import { Outlet, Route, Routes } from "react-router-dom"
 import { Welcome } from "../Welcome/Welcome"
 import { NavBar } from "../Nav/NavBar"
 import { Courses } from "../Courses/courses"
-import { MyTeeTimes } from "/home/dwest1220/workspace/TeeParty/client/components/TeeTimes/MyTeeTimes.jsx"
+import { MyTeeTimes } from "../TeeTimes/MyTeeTimes"
 import { BookTeeTimes } from "../TeeTimes/BookTeeTimes"
-import { useEffect, useState } from "react"
 import { EditTeeTime } from "../TeeTimes/EditTeeTime"
 import { Users } from "../Users/Users"
 import { Profile } from "../Profile/profile"
@@ -15,22 +14,25 @@ import { Connect } from "../Connect/connect"
 import { PendingConnections } from "../Connect/PendingConnections"
 import { CurrentConnections } from "../Connect/CurrentConnections"
 import { ProtectedRoute } from "../Auth/Auth"
-
+import { Login } from "../Auth/Login"
+import { useEffect, useState } from "react"
 
 export const AppViews = () => {
-
     const [currentUser, setCurrentUser] = useState(null)
 
     useEffect(() => {
-        const localGolfUser = localStorage.getItem("golf_user");
+        const localGolfUser = localStorage.getItem("golf_user")
         if (localGolfUser) {
-            const GolfUserObj = JSON.parse(localGolfUser);
-            setCurrentUser(GolfUserObj);
+            const GolfUserObj = JSON.parse(localGolfUser)
+            setCurrentUser(GolfUserObj)
         }
-    }, []);
+    }, [])
 
     return (
         <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<CreateUser />} />
+
             <Route
                 path="/"
                 element={
@@ -44,7 +46,6 @@ export const AppViews = () => {
                 }
             >
                 <Route index element={<Welcome />} />
-                <Route path="register" element={<CreateUser />} />
                 <Route path="courses" element={<Courses />} />
                 <Route path="teetimes">
                     <Route index element={<MyTeeTimes currentUser={currentUser} />} />
