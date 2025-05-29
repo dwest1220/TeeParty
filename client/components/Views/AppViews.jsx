@@ -16,6 +16,8 @@ import { CurrentConnections } from "../Connect/CurrentConnections"
 import { ProtectedRoute } from "../Auth/Auth"
 import { Login } from "../Auth/Login"
 import { useEffect, useState } from "react"
+import { InvitePlayers } from "../TeeTimes/InvitePlayers"
+import { PendingInvites } from "../TeeTimes/PendingInvites"
 
 export const AppViews = () => {
     const [currentUser, setCurrentUser] = useState(null)
@@ -61,6 +63,10 @@ export const AppViews = () => {
                     <Route index element={<Connect currentUser={currentUser} />} />
                     <Route path="pending" element={<PendingConnections currentUser={currentUser} />} />
                     <Route path="connected" element={<CurrentConnections currentUser={currentUser} />} />
+                </Route>
+                <Route path="invites">
+                    <Route path="send/:teeTimeId" element={<InvitePlayers currentUser={currentUser} />} />
+                    <Route path="pending" element={<PendingInvites currentUser={currentUser} />} />
                 </Route>
             </Route>
         </Routes>

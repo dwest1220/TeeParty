@@ -2,14 +2,41 @@ import { useEffect, useState } from "react"
 import { getAllTeetimesAndCourse } from "../../services/teetimeService"
 import { useNavigate } from "react-router-dom"
 import './MyTeeTimes.css'
+import { createInvite, getAllInvites } from "../../services/InviteService"
+import { InvitePlayers } from "./InvitePlayers"
 
 export const MyTeeTimes = ({ currentUser }) => {
     const [teetime, setTeetime] = useState([])
+    const [allInvites, setAllInvites] = useState([])
     const navigate = useNavigate()
 
     useEffect(() => {
         getAllTeetimesAndCourse().then(setTeetime)
+        getAllInvites().then(setAllInvites)
     }, [])
+
+    const [showInvite, setShowInvite] = useState(false)
+    const [selectedTeeTime, setSelectedTeeTime] = useState(null)
+
+    const handleInviteClick = (teeTimeId) => {
+        setSelectedTeeTime(teeTimeId)
+        setShowInvite(true)
+    }
+
+    const sendInvite = (inviteeUserId) => {
+        const invite = {
+            teeTimeId: selectedTeeTime,
+            senderUserId: currentUser.id,
+            inviteeUserId,
+            status: "pending"
+        }
+        createInvite(invite).then(() => alert("Invite sent!"))
+    }
+
+    const handleCloseInvitePanel = () => {
+    setShowInvite(false)
+    setSelectedTeeTime(null)
+}
 
     return (
         <div className="my-teetimes-page">
@@ -20,6 +47,12 @@ export const MyTeeTimes = ({ currentUser }) => {
                         className="button"
                         onClick={() => navigate(`/teetimes/book`)}
                     >Book TeeTime</button>
+                </section>
+                <section className="top-bar">
+                    <button
+                        className="button"
+                        onClick={()=> navigate(`/invites/pending`)}
+                    >Invites</button>
                 </section>
                 <article className="teetimes">
                     {teetime.map((teetime) => {
@@ -37,6 +70,10 @@ export const MyTeeTimes = ({ currentUser }) => {
                                         className="button"
                                         onClick={() => navigate(`/teetimes/edit/${teetime.id}`)}
                                     >Edit</button>
+                                    <button
+                                        className="button"
+                                        onClick={() => handleInviteClick(teetime.id)}
+                                    >Invite Players</button>
                                 </section>
                             )
                         } else {
@@ -44,6 +81,14 @@ export const MyTeeTimes = ({ currentUser }) => {
                         }
                     })}
                 </article>
+            {showInvite && (
+                <InvitePlayers
+                    teetimeId={selectedTeeTime}
+                    onSendInvite={sendInvite}
+                    onClose={handleCloseInvitePanel}
+                    existingInvites={allInvites.filter(invite => invite.teeTimeId === selectedTeeTime)}
+                />
+            )}
             </div>
         </div>
     )
