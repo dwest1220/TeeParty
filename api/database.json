@@ -294,146 +294,6 @@
   ],
   "teeTimes": [
     {
-      "id": 1,
-      "courseId": 1,
-      "dateTime": "2025-05-10T08:00:00",
-      "maxPlayers": 4,
-      "createdByUser": 2
-    },
-    {
-      "id": 2,
-      "courseId": 2,
-      "dateTime": "2025-05-12T14:30:00",
-      "maxPlayers": 4,
-      "createdByUser": 5
-    },
-    {
-      "id": 3,
-      "courseId": 1,
-      "dateTime": "2025-05-11T10:00:00",
-      "maxPlayers": 4,
-      "createdByUser": 3
-    },
-    {
-      "id": 4,
-      "courseId": 2,
-      "dateTime": "2025-05-13T09:15:00",
-      "maxPlayers": 4,
-      "createdByUser": 4
-    },
-    {
-      "id": 5,
-      "courseId": 3,
-      "dateTime": "2025-05-10T07:30:00",
-      "maxPlayers": 4,
-      "createdByUser": 2
-    },
-    {
-      "id": 6,
-      "courseId": 3,
-      "dateTime": "2025-05-14T15:00:00",
-      "maxPlayers": 4,
-      "createdByUser": 6
-    },
-    {
-      "id": 7,
-      "courseId": 4,
-      "dateTime": "2025-05-10T12:45:00",
-      "maxPlayers": 4,
-      "createdByUser": 7
-    },
-    {
-      "id": 8,
-      "courseId": 4,
-      "dateTime": "2025-05-11T08:15:00",
-      "maxPlayers": 4,
-      "createdByUser": 3
-    },
-    {
-      "id": 10,
-      "courseId": 5,
-      "dateTime": "2025-05-13T07:45:00",
-      "maxPlayers": 4,
-      "createdByUser": 5
-    },
-    {
-      "id": 11,
-      "courseId": 6,
-      "dateTime": "2025-05-10T16:30:00",
-      "maxPlayers": 4,
-      "createdByUser": 8
-    },
-    {
-      "id": 12,
-      "courseId": 6,
-      "dateTime": "2025-05-15T09:00:00",
-      "maxPlayers": 4,
-      "createdByUser": 2
-    },
-    {
-      "id": 13,
-      "courseId": 7,
-      "dateTime": "2025-05-10T08:45:00",
-      "maxPlayers": 4,
-      "createdByUser": 6
-    },
-    {
-      "id": 14,
-      "courseId": 7,
-      "dateTime": "2025-05-12T10:30:00",
-      "maxPlayers": 4,
-      "createdByUser": 7
-    },
-    {
-      "id": 16,
-      "courseId": 8,
-      "dateTime": "2025-05-13T11:15:00",
-      "maxPlayers": 4,
-      "createdByUser": 5
-    },
-    {
-      "id": 17,
-      "courseId": 9,
-      "dateTime": "2025-05-10T09:30:00",
-      "maxPlayers": 4,
-      "createdByUser": 4
-    },
-    {
-      "id": 18,
-      "courseId": 9,
-      "dateTime": "2025-05-14T13:45:00",
-      "maxPlayers": 4,
-      "createdByUser": 2
-    },
-    {
-      "id": 19,
-      "courseId": 10,
-      "dateTime": "2025-05-11T07:15:00",
-      "maxPlayers": 4,
-      "createdByUser": 8
-    },
-    {
-      "id": 20,
-      "courseId": 10,
-      "dateTime": "2025-05-15T15:30:00",
-      "maxPlayers": 4,
-      "createdByUser": 3
-    },
-    {
-      "id": 21,
-      "courseId": 1,
-      "dateTime": "2025-05-16T08:30:00",
-      "maxPlayers": 4,
-      "createdByUser": 6
-    },
-    {
-      "id": 22,
-      "courseId": 2,
-      "dateTime": "2025-05-16T13:00:00",
-      "maxPlayers": 4,
-      "createdByUser": 7
-    },
-    {
       "courseId": 9,
       "time": "08:45",
       "maxPlayers": 4,
@@ -462,7 +322,7 @@
       "id": 29
     },
     {
-      "courseId": 4,
+      "courseId": 8,
       "time": "08:30",
       "maxPlayers": 1,
       "createdByUser": 14,
@@ -502,6 +362,13 @@
       "maxPlayers": 1,
       "createdByUser": 17,
       "id": 35
+    },
+    {
+      "courseId": 12,
+      "time": "09:45",
+      "maxPlayers": 2,
+      "createdByUser": 15,
+      "id": 36
     }
   ],
   "teeTimePlayers": [
@@ -572,7 +439,7 @@
     {
       "requesterUserId": 16,
       "receiverUserId": 14,
-      "status": "pending",
+      "status": "accepted",
       "timestamp": 1747947292439,
       "id": 7
     },
@@ -593,53 +460,11 @@
   ],
   "teeTimeInvites": [
     {
-      "teeTimeId": 26,
-      "senderUserId": 1,
-      "inviteeUserId": 15,
-      "status": "accepted",
-      "id": 1
-    },
-    {
-      "teeTimeId": 26,
-      "senderUserId": 1,
-      "inviteeUserId": 14,
-      "status": "accepted",
-      "id": 2
-    },
-    {
-      "teeTimeId": 26,
-      "senderUserId": 1,
-      "inviteeUserId": 8,
-      "status": "pending",
-      "id": 3
-    },
-    {
-      "teeTimeId": 26,
-      "senderUserId": 1,
-      "inviteeUserId": 6,
-      "status": "pending",
-      "id": 4
-    },
-    {
-      "teeTimeId": 35,
-      "senderUserId": 17,
-      "inviteeUserId": 15,
-      "status": "accepted",
-      "id": 5
-    },
-    {
-      "teeTimeId": 23,
-      "senderUserId": 1,
-      "inviteeUserId": 15,
-      "status": "accepted",
-      "id": 6
-    },
-    {
-      "teeTimeId": 31,
+      "teeTimeId": 36,
       "senderUserId": 15,
       "inviteeUserId": 14,
       "status": "accepted",
-      "id": 7
+      "id": 1
     }
   ],
   "courseReviews": [
@@ -657,6 +482,14 @@
       "comment": "Great course for casual play. Can be a bit backed up on the weekends. ",
       "rating": 5,
       "id": 3
+    },
+    {
+      "courseId": 12,
+      "reviewerId": 14,
+      "reviewerName": "Nick Monty",
+      "comment": "Played Pinecreek for the first time. Not a bad course considering how little I hear about it. If you are ever in the area, check it out! ",
+      "rating": 4,
+      "id": 4
     }
   ]
 }

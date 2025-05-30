@@ -45,22 +45,26 @@ export const cancelTeeTime = async (id) => {
       });
 };
 
-export const getMyTeeTimes = (userId) => {
-  return Promise.all([
-    fetch(`http://localhost:8088/teeTimes?createdByUser=${userId}&_expand=course`).then(res => res.json()),
-    fetch(`http://localhost:8088/teeTimeInvites?inviteeUserId=${userId}&status=accepted&_expand=teeTime`).then(res => res.json())
-  ]).then(([created, invited]) => {
-    const teeTimePromises = invited.map(invite =>
-      fetch(`http://localhost:8088/teeTimes/${invite.teeTimeId}?_expand=course`).then(res => res.json())
-    )
+export const getMyTeeTimes = async (userId) => {
+  // 1. Tee times created by the user
+  const createdRes = await fetch(`http://localhost:8088/teeTimes?createdByUser=${userId}&_expand=course`);
+  const created = await createdRes.json();
 
-    return Promise.all(teeTimePromises).then(acceptedTeetimes => {
-      const all = [...created, ...acceptedTeetimes]
-      const unique = all.filter(
-        (teetime, index, self) =>
-          index === self.findIndex(t => t.id === teetime.id)
-      )
-      return unique
-    })
-  })
-}
+  // 2. Accepted invites for the user
+  const invitesRes = await fetch(`http://localhost:8088/teeTimeInvites?inviteeUserId=${userId}&status=accepted`);
+  const invites = await invitesRes.json();
+
+  // 3. For each invite, get the related tee time (with course)
+  const teeTimePromises = invites.map(invite =>
+    fetch(`http://localhost:8088/teeTimes/${invite.teeTimeId}?_expand=course`).then(res => res.json())
+  );
+  const invitedTeeTimes = await Promise.all(teeTimePromises);
+
+  // 4. Combine and dedupe by tee time id
+  const all = [...created, ...invitedTeeTimes];
+  const unique = all.filter(
+    (teetime, index, self) =>
+      index === self.findIndex(t => t.id === teetime.id)
+  );
+  return unique;
+};

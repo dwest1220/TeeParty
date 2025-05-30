@@ -34,9 +34,9 @@ export const MyTeeTimes = ({ currentUser }) => {
     }
 
     const handleCloseInvitePanel = () => {
-    setShowInvite(false)
-    setSelectedTeeTime(null)
-}
+        setShowInvite(false)
+        setSelectedTeeTime(null)
+    }
 
     return (
         <div className="my-teetimes-page">
@@ -51,44 +51,38 @@ export const MyTeeTimes = ({ currentUser }) => {
                 <section className="top-bar">
                     <button
                         className="button"
-                        onClick={()=> navigate(`/invites/pending`)}
+                        onClick={() => navigate(`/invites/pending`)}
                     >Invites</button>
                 </section>
                 <article className="teetimes">
-                    {teetime.map((teetime) => {
-                        if (currentUser.id === teetime.createdByUser) {
-                            return (
-                                <section className="teetime" key={teetime.id}>
-                                    <header className="teetime-info">{teetime.course.name}</header>
-                                    <footer>
-                                        <div className="teetime-info">
-                                            <div>Time: {teetime.time}</div>
-                                            <div>Players: {teetime.maxPlayers}</div>
-                                        </div>
-                                    </footer>
-                                    <button
-                                        className="button"
-                                        onClick={() => navigate(`/teetimes/edit/${teetime.id}`)}
-                                    >Edit</button>
-                                    <button
-                                        className="button"
-                                        onClick={() => handleInviteClick(teetime.id)}
-                                    >Invite Players</button>
-                                </section>
-                            )
-                        } else {
-                            return null
-                        }
-                    })}
+                    {teetime.map((teetime) => (
+                        <section className="teetime" key={teetime.id}>
+                            <header className="teetime-info">{teetime.course?.name}</header>
+                            <footer>
+                                <div className="teetime-info">
+                                    <div>Time: {teetime.time || teetime.dateTime}</div>
+                                    <div>Players: {teetime.maxPlayers}</div>
+                                </div>
+                            </footer>
+                            <button
+                                className="button"
+                                onClick={() => navigate(`/teetimes/edit/${teetime.id}`)}
+                            >Edit</button>
+                            <button
+                                className="button"
+                                onClick={() => handleInviteClick(teetime.id)}
+                            >Invite Players</button>
+                        </section>
+                    ))}
                 </article>
-            {showInvite && (
-                <InvitePlayers
-                    teetimeId={selectedTeeTime}
-                    onSendInvite={sendInvite}
-                    onClose={handleCloseInvitePanel}
-                    existingInvites={allInvites.filter(invite => invite.teeTimeId === selectedTeeTime)}
-                />
-            )}
+                {showInvite && (
+                    <InvitePlayers
+                        teetimeId={selectedTeeTime}
+                        onSendInvite={sendInvite}
+                        onClose={handleCloseInvitePanel}
+                        existingInvites={allInvites.filter(invite => invite.teeTimeId === selectedTeeTime)}
+                    />
+                )}
             </div>
         </div>
     )
