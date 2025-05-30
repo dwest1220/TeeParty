@@ -18,6 +18,7 @@ import { Login } from "../Auth/Login"
 import { useEffect, useState } from "react"
 import { InvitePlayers } from "../TeeTimes/InvitePlayers"
 import { PendingInvites } from "../TeeTimes/PendingInvites"
+import { CourseReviews } from "../Courses/CourseReviews"
 
 export const AppViews = () => {
     const [currentUser, setCurrentUser] = useState(null)
@@ -48,7 +49,10 @@ export const AppViews = () => {
                 }
             >
                 <Route index element={<Welcome />} />
-                <Route path="courses" element={<Courses />} />
+                <Route path="courses">
+                    <Route index element={<Courses />} />
+                    <Route path="reviews/:courseId" element={<CourseReviews currentUser={currentUser} />} />
+                </Route> 
                 <Route path="teetimes">
                     <Route index element={<MyTeeTimes currentUser={currentUser} />} />
                     <Route path="book" element={<BookTeeTimes currentUser={currentUser} />} />

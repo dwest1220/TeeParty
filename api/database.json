@@ -134,6 +134,15 @@
       "playStyle": "Casual / Southpaw",
       "bio": "Newer golfer, tend to have more beers drank than balls hit. ",
       "id": 16
+    },
+    {
+      "name": "Caleb Starlink",
+      "email": "cstar@example.com",
+      "location": "Nashville, TN",
+      "handicap": "22",
+      "playStyle": "Beginner / Casual",
+      "bio": "Looking to connect with other golfers in Nashville",
+      "id": 17
     }
   ],
   "courses": [
@@ -274,14 +283,6 @@
     }
   ],
   "reviews": [
-    {
-      "id": 1,
-      "userId": 1,
-      "courseId": 1,
-      "rating": 5,
-      "comment": "Loved the elevation changes and views!",
-      "date": "2025-05-05"
-    },
     {
       "id": 2,
       "userId": 4,
@@ -494,6 +495,13 @@
       "maxPlayers": 4,
       "createdByUser": 16,
       "id": 34
+    },
+    {
+      "courseId": 6,
+      "time": "10:30",
+      "maxPlayers": 1,
+      "createdByUser": 17,
+      "id": 35
     }
   ],
   "teeTimePlayers": [
@@ -595,7 +603,7 @@
       "teeTimeId": 26,
       "senderUserId": 1,
       "inviteeUserId": 14,
-      "status": "pending",
+      "status": "accepted",
       "id": 2
     },
     {
@@ -611,6 +619,44 @@
       "inviteeUserId": 6,
       "status": "pending",
       "id": 4
+    },
+    {
+      "teeTimeId": 35,
+      "senderUserId": 17,
+      "inviteeUserId": 15,
+      "status": "accepted",
+      "id": 5
+    },
+    {
+      "teeTimeId": 23,
+      "senderUserId": 1,
+      "inviteeUserId": 15,
+      "status": "accepted",
+      "id": 6
+    },
+    {
+      "teeTimeId": 31,
+      "senderUserId": 15,
+      "inviteeUserId": 14,
+      "status": "accepted",
+      "id": 7
+    }
+  ],
+  "courseReviews": [
+    {
+      "courseId": 15,
+      "reviewerId": 15,
+      "comment": "Course was just okay. Definitely a great spot to practice for new players!",
+      "rating": 3,
+      "id": 2
+    },
+    {
+      "courseId": 6,
+      "reviewerId": 15,
+      "reviewerName": "David Test",
+      "comment": "Great course for casual play. Can be a bit backed up on the weekends. ",
+      "rating": 5,
+      "id": 3
     }
   ]
 }

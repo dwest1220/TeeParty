@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAllTeetimesAndCourse } from "../../services/teetimeService"
+import { getAllTeetimesAndCourse, getMyTeeTimes } from "../../services/teetimeService"
 import { useNavigate } from "react-router-dom"
 import './MyTeeTimes.css'
 import { createInvite, getAllInvites } from "../../services/InviteService"
@@ -11,9 +11,9 @@ export const MyTeeTimes = ({ currentUser }) => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        getAllTeetimesAndCourse().then(setTeetime)
+        getMyTeeTimes(currentUser?.id).then(setTeetime)
         getAllInvites().then(setAllInvites)
-    }, [])
+    }, [currentUser])
 
     const [showInvite, setShowInvite] = useState(false)
     const [selectedTeeTime, setSelectedTeeTime] = useState(null)
