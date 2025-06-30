@@ -116,7 +116,7 @@ Advanced Features
 
 As a frequent player, I want to track my booking history and preferences
 As a group organizer, I want to coordinate golf outings with multiple players
-As a course reviewer, I want to share photos and detailed course conditions
+As a course reviewer, I want to share reviews and detailed course conditions
 
 🔧 Development
 Project Structure
