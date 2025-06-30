@@ -1,4 +1,4 @@
-#TeeParty
+# TeeParty
 
 A unified digital platform bringing the entire golfing experience together in one place.
 
