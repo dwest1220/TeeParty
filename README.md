@@ -1,4 +1,4 @@
-# TeeParty
+TeeParty
 
 A unified digital platform bringing the entire golfing experience together in one place.
 
@@ -44,20 +44,25 @@ React (Latest Version)
 JavaScript (ES6+)
 CSS3 (Vanilla CSS)
 Bootstrap 5
-Local JSON Database (Frontend Only)
+Vite (Build Tool)
+
+Backend/Data:
+
+Local JSON Database
+Node.js (for API server)
 
 Development Tools:
 
-Node.js (Latest LTS)
-npm package manager
+ESLint (Code linting)
+Git (Version control)
 Modern browser compatibility
 
 Architecture:
 
 Single Page Application (SPA)
 Component-based architecture
-Local state management
-Frontend-only implementation
+Local API with JSON database
+Client-server separation
 
 🚀 Getting Started
 Prerequisites
@@ -74,14 +79,25 @@ Clone the repository
 bashgit clone https://github.com/dwest1220/TeeParty.git
 cd TeeParty
 
-Install dependencies
+Install dependencies for both client and API
 
-bashnpm install
+bash# Install frontend dependencies
+npm install
 
-Start the development server
+# Install API dependencies
+cd API
+npm install
+cd ..
 
-bashnpm start
-The application will open automatically in your browser at http://localhost:3000.
+Start both servers
+
+bash# Terminal 1: Start the API server
+cd API
+npm start
+
+# Terminal 2: Start the frontend development server
+npm run dev
+The application will be available at http://localhost:5173 (Vite default port).
 
 Dashboard View: Overview of upcoming tee times and activity
 Course Discovery: Browse and search golf courses
@@ -104,26 +120,36 @@ As a course reviewer, I want to share photos and detailed course conditions
 
 🔧 Development
 Project Structure
+CLIENT (Frontend):
 TeeParty/
-├── public/
-│   ├── index.html
-│   └── assets/             # Static images and icons
-├── src/
-│   ├── components/         # Reusable React components
-│   ├── pages/              # Main application pages
-│   ├── data/               # Local JSON database files
-│   ├── styles/             # CSS styling files
-│   ├── utils/              # Helper functions
-│   ├── App.js              # Main App component
-│   └── index.js            # Application entry point
-├── package.json            # Project dependencies
-└── README.md              # Project documentation
+├── components/           # Reusable React components
+├── public/              # Static assets and files
+├── services/            # API calls and data services
+├── src/                 # Main source code
+├── .gitignore          # Git ignore file
+├── eslint.config.js    # ESLint configuration
+├── index.html          # Main HTML file
+├── package.json        # Dependencies and scripts
+├── package-lock.json   # Dependency lock file
+└── vite.config.js      # Vite build configuration
+API (Backend Data):
+API/
+├── node_modules/       # Backend dependencies
+├── database.json       # Local JSON database
+├── package.json        # Backend package configuration
+└── package-lock.json   # Backend dependency lock file
 Available Scripts
+Frontend (CLIENT):
 
-npm start - Runs the app in development mode
+npm run dev - Runs the development server with Vite
 npm run build - Builds the app for production
-npm test - Launches the test runner
-npm run eject - Ejects from Create React App (one-way operation)
+npm run preview - Preview the production build locally
+npm run lint - Run ESLint for code quality
+
+Backend (API):
+
+npm start - Starts the local JSON database server
+npm run dev - Runs the API in development mode
 
 🧪 Testing
 This project uses React's built-in testing utilities with Jest and React Testing Library.
@@ -166,15 +192,15 @@ This project was developed as a frontend capstone project, addressing a real pro
 Connect with me:
 
 GitHub: @dwest1220
-LinkedIn: [https://www.linkedin.com/in/david-west-a205a8274/]
+LinkedIn: [[Your LinkedIn Profile]](https://www.linkedin.com/in/david-west-a205a8274/)
 Email: davidwestsoftdev@gmail.com
 
 🙏 Acknowledgments
 
-Create React App for providing the initial project structure
+Vite team for the fast build tool and development experience
+Create React App for inspiring the project structure
 Bootstrap team for the responsive UI framework
 The golf community for inspiring this project
-
 
 
 ⛳ Happy Golfing! ⛳
