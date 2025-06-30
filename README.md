@@ -192,7 +192,7 @@ This project was developed as a frontend capstone project, addressing a real pro
 Connect with me:
 
 GitHub: @dwest1220
-LinkedIn: [[Your LinkedIn Profile]](https://www.linkedin.com/in/david-west-a205a8274/)
+LinkedIn: https://www.linkedin.com/in/david-west-a205a8274/
 Email: davidwestsoftdev@gmail.com
 
 🙏 Acknowledgments
